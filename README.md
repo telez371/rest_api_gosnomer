@@ -8,7 +8,7 @@
 
 ## Description
 
-This project is a web application built with Flask, a micro web framework for Python. The application allows users to generate and store unique phone numbers using the gosnomer library. The application utilizes a SQLAlchemy ORM to interact with a database and handle data.
+This project is a web application built with Flask, a micro web framework for Python. The application allows users to generate and store unique car numbers numbers using the gosnomer library. The application utilizes a SQLAlchemy ORM to interact with a database and handle data.
 
 ## Documentation
 
