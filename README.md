@@ -6,6 +6,12 @@
      <a href="https://ibb.co/Bwn5LDD"><img src="https://i.ibb.co/Bwn5LDD/nomer2-1024x363-800x800.png" alt="nomer2-1024x363-800x800" border="0"></a>
 </p>
 
+<p align="left">
+   <img src="https://img.shields.io/badge/flask-2.2.2-blueviolet" alt="flask Version">
+   <img src="https://img.shields.io/badge/uuid-1.30-blue" alt="uuid Version">
+   <img src="https://img.shields.io/badge/LICENSE-MIT-brightgreen" alt="License">
+</p>
+
 ## Description
 
 This project is a web application built with Flask, a micro web framework for Python. The application allows users to generate and store unique car numbers using the gosnomer library. The application utilizes a SQLAlchemy ORM to interact with a database PostgreSQL and handle data.
