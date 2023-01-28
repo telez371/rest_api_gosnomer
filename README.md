@@ -9,6 +9,7 @@
 <p align="left">
    <img src="https://img.shields.io/badge/flask-2.2.2-blueviolet" alt="flask Version">
    <img src="https://img.shields.io/badge/uuid-1.30-blue" alt="uuid Version">
+   <img src="https://img.shields.io/badge/PostgreSQL-14-orange" alt="PostgreSQL Version">
    <img src="https://img.shields.io/badge/LICENSE-MIT-brightgreen" alt="License">
 </p>
 
