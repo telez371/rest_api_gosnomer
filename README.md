@@ -28,10 +28,23 @@ Parameters
 
 Example Request
 
-<p align="left">
-      <img src="https://skr.sh/i/280123/0vVOeEw1.jpg?download=1&name=%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2028-01-2023%2015:36:28.jpg">
-</p>
+<pre>
+<span class="key">/PLATE/GENERATE?amount=5</span>
+</pre>
 
+Response
+
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"1"</span>: <span class="value">"В261СА31"</span>,
+<span class="key">"2"</span>: <span class="value">"О022КР93"</span>,
+<span class="key">"3"</span>: <span class="value">"О424ТО92"</span>,
+<span class="key">"4"</span>: <span class="value">"Р557УН161"</span>,
+<span class="key">"5"</span>: <span class="value">"К248КС150"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
 GET | /PLATE/GET
 This endpoint allows you to retrieve a specific state vehicle registration number record by its ID.
 
