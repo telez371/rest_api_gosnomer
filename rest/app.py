@@ -1,21 +1,23 @@
 from flask import Flask, request, jsonify
-from sqlalchemy.exc import IntegrityError
 import gosnomer
 from models import *
 from generate_numbers import GenerateNumbres
 from sqlalchemy.orm import sessionmaker
+from authorization import TokenNumbres
+
 
 app = Flask(__name__)
 
 Session = sessionmaker(bind=engine)
 session = Session()
+TOKEN = TokenNumbres.token()
 
 
 @app.route("/PLATE/GENERATE", methods=["GET"])
 def generate_plate():
     token = request.headers.get("Authorization")
     amount = request.args.get("amount")
-    if token != "65ded53be0a581a8554f340cc3640ee41f9a5525":
+    if TOKEN != token != None:
         return {"Error": "Указан не верный токен"}, 401
 
     if token is None:
@@ -25,22 +27,13 @@ def generate_plate():
     else:
         amount = int(amount)
 
-    connection = engine.connect()
     new_number = {}
-    for _ in range(amount):
+    for num in range(amount):
         try:
-            new_generate = GenerateNumbres.numbers()
-            if session.query(Numbers).filter_by(auto_numbers=new_generate).first() is not None:
-                return jsonify({"Error": f"Номер {new_generate} уже существует"}), 401
-
-            record = Numbers(number_id=uuid.uuid4(), auto_numbers=new_generate)
-            session.add(record)
-            session.flush()
-            new_number[str(record.number_id)] = record.auto_numbers
+            new_number[num + 1] = GenerateNumbres.numbers()
 
         except ValueError as e:
             return jsonify({"Error": str(e)}), 401
-    connection.close()
 
     return jsonify(new_number), 201
 
@@ -49,7 +42,7 @@ def generate_plate():
 def get_plate():
     token = request.headers.get("Authorization")
     numbers_id = request.args.get("id")
-    if token != "65ded53be0a581a8554f340cc3640ee41f9a5525":
+    if TOKEN != token != None:
         return {"Error": "Указан не верный токен"}, 401
 
     if token is None:
@@ -72,7 +65,8 @@ def get_plate():
 def post_plate():
     token = request.headers.get("Authorization")
     plate = request.args.get("plate")
-    if token != "65ded53be0a581a8554f340cc3640ee41f9a5525":
+
+    if TOKEN != token != None:
         return {"Error": "Указан не верный токен"}, 401
 
     if token is None:
@@ -98,6 +92,7 @@ def post_plate():
 
     except ValueError as e:
         return {"Error": str(e)}, 401
+
 
 if __name__ == "__main__":
     app.run()

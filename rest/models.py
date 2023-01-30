@@ -4,7 +4,7 @@ import uuid
 from sqlalchemy.dialects.postgresql import UUID
 
 
-engine = create_engine('postgresql://ХХХХ:ХХХХ@localhost:5432/numbers_db')
+engine = create_engine('postgresql://numbers_username:QWasZX12@localhost:5432/numbers_db')
 
 Base = declarative_base()
 metadata = MetaData()
