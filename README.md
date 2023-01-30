@@ -106,6 +106,3 @@ The application has the following endpoints:
 <li><a href="https://flask.palletsprojects.com/" target="_new">Flask</a></li>
 <li><a href="https://www.sqlalchemy.org/" target="_new">SQLAlchemy</a></li>
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
