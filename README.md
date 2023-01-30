@@ -95,9 +95,9 @@ Response
 
 The application has the following endpoints:
 
-<li><code>GET /numbers</code>: Retrieve a list of generated car numbers</li>
-<li><code>POST /generate</code>: Generate new car numbers with a specified quantity</li>
-<li><code>POST /numbers</code>: Add a new car numbers to the database</li>
+<li><code>GET /PLATE/GENERATE</code>: Generate new car numbers with a specified quantity</li>
+<li><code>GET /PLATE/GET</code>: Retrieve a list of generated car numbers</li>
+<li><code>POST /PLATE/ADD</code>: Add a new car numbers to the database</li>
 
 
 ## Acknowledgments
