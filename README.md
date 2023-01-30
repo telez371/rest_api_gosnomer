@@ -54,9 +54,19 @@ Parameters
 
 Example Request
 
-<p align="left">
-      <img src="https://skr.sh/i/280123/fvQPV0WU.jpg?download=1&name=%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2028-01-2023%2015:44:45.jpg">
-</p>
+<pre>
+<span class="key">/PLATE/GET?id=adc3e6f7-3ba7-42e7-8616-f3b0ed3f9760</span>
+</pre>
+
+Response
+
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"adc3e6f7-3ba7-42e7-8616-f3b0ed3f9760"</span>: <span class="value">"А777ЕУ77"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
 
 POST | /PLATE/ADD
 This endpoint allows you to add a new state vehicle registration number to the database.
@@ -67,9 +77,19 @@ Parameters
 <li><code>plate</code>: State vehicle registration number</li>
 
 Example Request
-<p align="left">
-      <img src="https://skr.sh/i/280123/E4RquaMQ.jpg?download=1&name=%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2028-01-2023%2015:51:54.jpg">
-</p>
+<pre>
+<span class="key">/PLATE/ADD?plate=a888еу77</span>
+</pre>
+
+Response
+
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"42465c4b-05f7-46bf-810f-c931824fee5c"</span>: <span class="value">"А888ЕУ77"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
 
 ## Usage
 
