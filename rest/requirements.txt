@@ -1,5 +1,10 @@
-Flask==2.2.2
-gosnomer==0.0.9
-SQLAlchemy==1.4.46
-uuid==1.30
+Flask
+gosnomer
+SQLAlchemy
+python-dotenv
+passlib
+Flask-JWT-Extended
+bcrypt
+
+
 

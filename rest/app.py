@@ -1,97 +1,126 @@
-from flask import Flask, request, jsonify
+import logging
 import gosnomer
-from models import *
-from generate_numbers import GenerateNumbres
-from sqlalchemy.orm import sessionmaker
-from authorization import TokenNumbres
+import sqlalchemy as db
+from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+import os
+from flask import Flask, request, jsonify
+from generate_numbers import RegistrationMarkGenerator
+
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
+from config import Config
+
+from dotenv import  load_dotenv
+registration_mark_generator = RegistrationMarkGenerator()
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
+load_dotenv()
+url = os.getenv("DATABASE_URL")
+engine = create_engine(url)
+session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
+Base = declarative_base()
+Base.query = session.query_property()
+jwt = JWTManager(app)
 
-Session = sessionmaker(bind=engine)
-session = Session()
-TOKEN = TokenNumbres.token()
+from models import *
+Base.metadata.create_all(bind=engine)
+
+
+
+
+# def setup_logger():
+#     logger = logging.getLogger(__name__)
+#     logger.setLevel(logging.DEBUG)
+#
+#     formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
+#     file_handler = logging.FileHandler('log/api.log')
+#     file_handler.setFormatter(formatter)
+#     logger.addHandler(file_handler)
+#
+#     return logger
+#
+# logger = setup_logger()
 
 
 @app.route("/PLATE/GENERATE", methods=["GET"])
+@jwt_required()
 def generate_plate():
-    token = request.headers.get("Authorization")
     amount = request.args.get("amount")
-    if TOKEN != token != None:
-        return {"Error": "Указан не верный токен"}, 401
+    try:
+        amount = 1 if amount is None else int(amount)
+        registration_mark = {}
+        for num in range(amount):
+            registration_mark[num + 1] = registration_mark_generator.generate_car_number()
+        return jsonify(registration_mark), 200
+    except ValueError as e:
+        # logger.warning(f'user:{user_id} tutorials - read acrion failed with errors: {e}')
+        return {"Error": str(e)}, 401
 
-    if token is None:
-        return {"Error": "Missing authorization token"}, 401
-    if amount is None:
-        amount = 1
-    else:
-        amount = int(amount)
-
-    new_number = {}
-    for num in range(amount):
-        try:
-            new_number[num + 1] = GenerateNumbres.numbers()
-
-        except ValueError as e:
-            return jsonify({"Error": str(e)}), 401
-
-    return jsonify(new_number), 201
 
 
 @app.route("/PLATE/GET", methods=["GET"])
+@jwt_required()
 def get_plate():
-    token = request.headers.get("Authorization")
-    numbers_id = request.args.get("id")
-    if TOKEN != token != None:
-        return {"Error": "Указан не верный токен"}, 401
+    try:
+        request_registration_mark = request.args.get("id")
+        existing_registration_mark = session.query(RegistrationNumbers).filter_by(id=request_registration_mark).first()
+        return jsonify({str(existing_registration_mark.id): existing_registration_mark.auto_numbers}), 200
+    except ValueError as e:
+        return {"Error": str(e)}, 401
 
-    if token is None:
-        return {"Error": "Missing authorization token"}, 401
 
-    if id is None:
-        return {"Error": "Не указан идентификатор записи о государственном номере"}, 422
-
-    connection = engine.connect()
-
-    number = session.query(Numbers).filter_by(number_id=numbers_id).first()
-    if not number:
-        return {"Error": "Сожалею но такого номера нет"}, 404
-
-    connection.close()
-    return jsonify({str(number.number_id): number.auto_numbers}), 200
 
 
 @app.route("/PLATE/ADD", methods=["POST"])
+@jwt_required()
 def post_plate():
-    token = request.headers.get("Authorization")
     plate = request.args.get("plate")
-
-    if TOKEN != token != None:
-        return {"Error": "Указан не верный токен"}, 401
-
-    if token is None:
-        return {"Error": "Missing authorization token"}, 401
-
-    if plate is None:
-        return {"Error": "Укажите государственный номер автомобиля"}, 422
-
     try:
-        number_add = {}
-        connection = engine.connect()
+        user_id = get_jwt_identity()
+        response_registration_mark = {}
         plate = gosnomer.normalize(plate)
-
-        if session.query(Numbers).filter_by(auto_numbers=plate).first() is not None:
-            return jsonify({"Error": f"Номер {plate} уже существует"}), 401
-
-        record = Numbers(number_id=uuid.uuid4(), auto_numbers=plate)
+        record = RegistrationNumbers(user_id=user_id, id=uuid.uuid4(), auto_numbers=plate)
         session.add(record)
-        session.flush()
-        number_add[str(record.number_id)] = record.auto_numbers
-        connection.close()
-        return jsonify(number_add), 201
-
+        session.commit()
+        response_registration_mark[str(record.id)] = record.auto_numbers
+        return jsonify(response_registration_mark), 201
     except ValueError as e:
         return {"Error": str(e)}, 401
+
+
+@app.route("/PLATE/REGISTER", methods=["POST"])
+def register():
+    params = request.json
+    user = User(**params)
+    session.add(user)
+    session.commit()
+    token = user.get_token()
+    return jsonify({'access_token': token})
+
+
+@app.route("/PLATE/LOGIN", methods=["POST"])
+def login():
+    params = request.json
+    user = User.authenticate(**params)
+    token = user.get_token()
+    return jsonify({'access_token': token})
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    session.remove()
+
+
+
+# @app.errorhandler
+# def error_handler(err):
+#     headers = err.data.get('headers', None)
+#     messages = err.data.get('messages', ['Invalid request'])
+#     if headers:
+#         return jsonify({'message': messages}), 400, headers
+#     return jsonify({'message': messages}), 400
 
 
 if __name__ == "__main__":

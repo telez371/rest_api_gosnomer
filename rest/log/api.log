@@ -1,0 +1,124 @@
+2023-02-01 19:34:02,708:app:ERROR:Exception on /PLATE/REGISTER [POST]
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2421, in _determine_joins
+    self.primaryjoin = join_condition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\sql\util.py", line 122, in join_condition
+    return Join._join_condition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\sql\selectable.py", line 1377, in _join_condition
+    raise exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'my_users' and 'car_number'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\90531\Documents\GitHub\rest_api_gosnomer\rest\app.py", line 94, in register
+    user = User(**params)
+  File "<string>", line 4, in __init__
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\state.py", line 570, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\event\attr.py", line 487, in __call__
+    fn(*args, **kw)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4232, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 2322, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4041, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4082, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 2339, in _post_configure_properties
+    prop.init()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\interfaces.py", line 544, in init
+    self.do_init()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 1634, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 1881, in _setup_join_conditions
+    self._join_condition = jc = JoinCondition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2308, in __init__
+    self._determine_joins()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2442, in _determine_joins
+    raise sa_exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship User.users - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2023-02-01 19:34:58,224:app:ERROR:Exception on /PLATE/REGISTER [POST]
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\90531\Documents\GitHub\rest_api_gosnomer\rest\app.py", line 94, in register
+    user = User(**params)
+  File "<string>", line 4, in __init__
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\state.py", line 570, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\event\attr.py", line 487, in __call__
+    fn(*args, **kw)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4232, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 2322, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4041, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4078, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[User(my_users)]'. Original exception was: Could not determine join condition between parent/child tables on relationship User.users - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2023-02-01 19:36:03,805:app:ERROR:Exception on /PLATE/REGISTER [POST]
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2421, in _determine_joins
+    self.primaryjoin = join_condition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\sql\util.py", line 122, in join_condition
+    return Join._join_condition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\sql\selectable.py", line 1377, in _join_condition
+    raise exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Can't find any foreign key relationships between 'my_users' and 'car_number'.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\90531\Documents\GitHub\rest_api_gosnomer\rest\app.py", line 94, in register
+    user = User(**params)
+  File "<string>", line 4, in __init__
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\state.py", line 570, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\event\attr.py", line 487, in __call__
+    fn(*args, **kw)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4232, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 2322, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4041, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 4082, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\mapper.py", line 2339, in _post_configure_properties
+    prop.init()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\interfaces.py", line 544, in init
+    self.do_init()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 1634, in do_init
+    self._setup_join_conditions()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 1881, in _setup_join_conditions
+    self._join_condition = jc = JoinCondition(
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2308, in __init__
+    self._determine_joins()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2442, in _determine_joins
+    raise sa_exc.NoForeignKeysError(
+sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship User.users - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
