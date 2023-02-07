@@ -122,3 +122,223 @@ Traceback (most recent call last):
   File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\sqlalchemy\orm\relationships.py", line 2442, in _determine_joins
     raise sa_exc.NoForeignKeysError(
 sqlalchemy.exc.NoForeignKeysError: Could not determine join condition between parent/child tables on relationship User.users - there are no foreign keys linking these tables.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or specify a 'primaryjoin' expression.
+2023-02-04 17:49:40,257:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 17:50:27,306:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 17:51:16,008:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 17:53:51,240:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 17:56:30,481:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 18:04:58,931:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 18:05:23,049:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 18:08:47,803:__main__:WARNING:user:1 get_id - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'session'
+2023-02-04 18:13:52,151:__main__:WARNING:user:1 get_id - read action failed with errors: 'Query' object is not callable
+2023-02-04 18:25:55,411:__main__:WARNING:user:1 Post - read action failed with errors: Class 'sqlalchemy.orm.decl_api.DeclarativeMeta' is not mapped; was a class (models.RegistrationNumbers) supplied where an instance was required?
+2023-02-04 18:28:00,795:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А615ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('a1fdb0a5-2057-42aa-b42a-b3440bc8c1d0'), 'users_id': None, 'auto_numbers': 'А615ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 18:54:38,668:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А615ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('e393960d-5bd5-4aaa-ade2-8d893cbc2855'), 'users_id': None, 'auto_numbers': 'А615ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 18:58:40,478:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А615ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('92222946-cce7-487d-b244-af45ced8f853'), 'users_id': None, 'auto_numbers': 'А615ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 19:16:52,277:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:16:57,084:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:17:34,100:__main__:WARNING:user:1 Post - read action failed with errors: Недопустимый формат: "XXX999"
+2023-02-04 19:20:37,875:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:20:52,813:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:21:27,934:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:21:44,263:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:23:21,201:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:23:29,898:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:23:37,501:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:25:15,051:__main__:WARNING:user:1 Post - read action failed with errors: RegistrationNumbers.post_plate_add() missing 1 required positional argument: 'uuid'
+2023-02-04 19:25:21,700:__main__:WARNING:user:1 Post - read action failed with errors: RegistrationNumbers.post_plate_add() missing 1 required positional argument: 'uuid'
+2023-02-04 19:25:59,388:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:26:38,279:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:27:32,702:__main__:WARNING:user:1 Post - read action failed with errors: type object 'RegistrationNumbers' has no attribute 'RegistrationNumbers'
+2023-02-04 19:29:12,753:__main__:WARNING:user:1 Post - read action failed with errors: Номер А598АА799 уже существует
+2023-02-04 19:40:05,829:__main__:WARNING:user:1 Post - read action failed with errors: Номер А536АА799 уже существует
+2023-02-04 19:43:36,599:__main__:WARNING:user:1 Post - read action failed with errors: Номер А596АА799 уже существует
+2023-02-04 19:50:49,592:__main__:WARNING:user:1 Post - read action failed with errors: Недопустимый формат: "X9XX999"
+2023-02-04 20:01:18,380:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А496АА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('e8d4728f-f80f-41d5-a594-0bd754b262a7'), 'users_id': None, 'auto_numbers': 'А496АА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 20:02:37,354:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496АА799 уже существует
+2023-02-04 20:04:16,140:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496АА799 уже существует
+2023-02-04 20:12:10,870:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:12:14,797:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:14:27,995:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А496ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('57108f66-f179-4486-b541-f94eefd5cd2b'), 'users_id': None, 'auto_numbers': 'А496ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 20:14:58,568:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А496ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('6faec1db-b0bb-4a36-9bba-51b927260314'), 'users_id': None, 'auto_numbers': 'А496ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 20:16:18,776:__main__:WARNING:user:1 Post - read action failed with errors: (psycopg2.errors.UniqueViolation) ОШИБКА:  повторяющееся значение ключа нарушает ограничение уникальности "user_my_car_numbers_auto_numbers_key"
+DETAIL:  Ключ "(auto_numbers)=(А496ЕА799)" уже существует.
+
+[SQL: INSERT INTO user_my_car_numbers (id, users_id, auto_numbers) VALUES (%(id)s::UUID, %(users_id)s, %(auto_numbers)s)]
+[parameters: {'id': UUID('15e98f91-aa2e-483d-81c0-088826343ae5'), 'users_id': None, 'auto_numbers': 'А496ЕА799'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-02-04 20:16:48,984:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:22:20,443:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:23:14,606:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:23:32,936:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:34:56,594:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:36:42,532:__main__:WARNING:user:1 Post - read action failed with errors:  II Номер А496ЕА799 уже существует
+2023-02-04 20:37:11,113:__main__:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-04 20:37:40,144:__main__:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-04 20:39:50,004:__main__:WARNING:user:1 Post - read action failed with errors: Номер А496ЕА799 уже существует
+2023-02-04 20:46:19,769:__main__:WARNING:user:1 Post - read action failed with errors: Номер А496ЕА799 уже существует
+2023-02-04 21:55:20,144:__main__:WARNING:user:1 Post - read action failed with errors: Номер А496ЕА799 уже существует
+2023-02-06 15:31:14,915:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: [Errno 22] Invalid argument
+2023-02-06 15:31:45,073:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:32:53,706:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:36:21,336:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:36:27,734:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:36:31,176:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:38:27,721:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:38:40,947:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:41:32,885:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:45:20,169:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:45:38,088:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:47:06,951:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:48:01,635:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:55:35,427:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:55:50,742:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 15:59:48,086:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:00:03,207:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:22:17,829:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:24:33,483:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:24:53,711:numbers_rest_api:WARNING:user:1 Post - read action failed with errors: Недопустимый формат: ""
+2023-02-06 16:25:02,147:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:26:08,589:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-06 16:26:21,692:numbers_rest_api:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-07 13:46:52,187:rest.numbersrestapi:WARNING:user:1 Post - read action failed with errors: Номер А459ЕА799 уже существует
+2023-02-07 13:47:04,432:rest.numbersrestapi:WARNING:user:1 Post - read action failed with errors: Номер А461ЕА799 уже существует
+2023-02-07 15:19:38,678:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: Недопустимый формат: ""
+2023-02-07 15:19:53,994:rest.numbersrestapi:WARNING:user:1 get_id - read action failed with errors: No numbers
+2023-02-07 15:24:56,607:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: Entity namespace for "user_my_car_numbers" has no property "number_id"
+2023-02-07 15:26:33,655:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: name 'uuid' is not defined
+2023-02-07 15:27:44,756:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: RegistrationNumbers.post_plate_add() missing 1 required positional argument: 'uuid'
+2023-02-07 15:28:26,532:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: 'number_id' is an invalid keyword argument for RegistrationNumbers
+2023-02-07 15:31:12,206:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: Номер А462ЕА799 уже существует
+2023-02-07 15:33:26,029:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: Номер А464ЕА799 уже существует
+2023-02-07 16:20:42,984:rest.numbersrestapi:ERROR:Exception on /profile [GET]
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\views.py", line 188, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\annotations.py", line 122, in wrapped
+    return wrapper(*args, **kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\wrapper.py", line 33, in __call__
+    mv = self.marshal_result(rv, status_code)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\wrapper.py", line 67, in marshal_result
+    return format_response(output)  # type: Response
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type function is not JSON serializable
+2023-02-07 16:21:57,533:rest.numbersrestapi:ERROR:Exception on /profile [GET]
+Traceback (most recent call last):
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\views.py", line 188, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\annotations.py", line 122, in wrapped
+    return wrapper(*args, **kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\wrapper.py", line 33, in __call__
+    mv = self.marshal_result(rv, status_code)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask_apispec\wrapper.py", line 67, in marshal_result
+    return format_response(output)  # type: Response
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\90531\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\90531\Desktop\Rest_Python\rest_api_gosnomer\lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type function is not JSON serializable
+2023-02-07 16:31:12,331:rest.numbersrestapi:WARNING:user:1 get_id - read action failed with errors: (psycopg2.errors.InvalidTextRepresentation) ОШИБКА:  неверный синтаксис для типа uuid: "0e9b309b-7821-4c43-9b07-9f5bb631f"
+LINE 3: WHERE user_my_car_numbers.id = '0e9b309b-7821-4c43-9b07-9f5b...
+                                       ^
+
+[SQL: SELECT user_my_car_numbers.id AS user_my_car_numbers_id, user_my_car_numbers.users_id AS user_my_car_numbers_users_id, user_my_car_numbers.auto_numbers AS user_my_car_numbers_auto_numbers 
+FROM user_my_car_numbers 
+WHERE user_my_car_numbers.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': '0e9b309b-7821-4c43-9b07-9f5bb631f', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2023-02-07 16:31:38,251:rest.numbersrestapi:WARNING:user:1 get_id - read action failed with errors: (psycopg2.errors.InvalidTextRepresentation) ОШИБКА:  неверный синтаксис для типа uuid: ""
+LINE 3: WHERE user_my_car_numbers.id = ''::UUID 
+                                       ^
+
+[SQL: SELECT user_my_car_numbers.id AS user_my_car_numbers_id, user_my_car_numbers.users_id AS user_my_car_numbers_users_id, user_my_car_numbers.auto_numbers AS user_my_car_numbers_auto_numbers 
+FROM user_my_car_numbers 
+WHERE user_my_car_numbers.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': '', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2023-02-07 16:32:44,519:rest.numbersrestapi:WARNING:user: get_id - read action failed with errors: (psycopg2.errors.InvalidTextRepresentation) ОШИБКА:  неверный синтаксис для типа uuid: "0e9b309b-7821-4c43-9b07-9f5bb63107"
+LINE 3: WHERE user_my_car_numbers.id = '0e9b309b-7821-4c43-9b07-9f5b...
+                                       ^
+
+[SQL: SELECT user_my_car_numbers.id AS user_my_car_numbers_id, user_my_car_numbers.users_id AS user_my_car_numbers_users_id, user_my_car_numbers.auto_numbers AS user_my_car_numbers_auto_numbers 
+FROM user_my_car_numbers 
+WHERE user_my_car_numbers.id = %(id_1)s::UUID 
+ LIMIT %(param_1)s]
+[parameters: {'id_1': '0e9b309b-7821-4c43-9b07-9f5bb63107', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2023-02-07 17:09:03,817:rest.numbersrestapi:WARNING:user: Post - read action failed with errors: Номер А464ЕА799 уже существует

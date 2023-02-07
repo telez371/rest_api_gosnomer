@@ -1,6 +1,6 @@
 from random import randint
 from random import choice
-
+import json
 
 class RegistrationMarkGenerator:
     valid_registration_mark_letters = 'АВЕКМНОРСТУХ'
@@ -29,3 +29,6 @@ class RegistrationMarkGenerator:
         last_too_registration_letters = choice(self.valid_registration_mark_letters) + choice(self.valid_registration_mark_letters)
         registration_region = choice(self.valid_region)
         return first_registration_letter  + first_tree_registration_numbers + last_too_registration_letters + registration_region
+
+
+
