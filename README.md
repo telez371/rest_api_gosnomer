@@ -19,12 +19,90 @@ This project is a web application built with Flask, a micro web framework for Py
 
 ## Documentation
 
+swagger documentation.
+
+
+Example Request
+
+<pre>
+<span class="key">/swagger-ui</span>
+</pre>
+
+
+
+POST | /PLATE/REGISTER
+Registration for receiving a Bearer Token.
+
+
+Example Request
+
+<pre>
+<span class="key">/PLATE/REGISTER</span>
+</pre>
+
+
+
+Parameters
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"email"</span>: <span class="value">"test@gmail.com"</span>,
+<span class="key">"name"</span>: <span class="value">"TestUser"</span>,
+<span class="key">"password"</span>: <span class="value">"qwertyui"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
+
+Response
+
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"access_token"</span>: <span class="value">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVza
+CI6ZmFsc2UsImlhdCI6MTY3NTc3MzE3NSwianRpIjoiMjQzMjBiMWUtMmFhNS00MGYxLTkwMWQtNjUyMDA3ZWM4NjAwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6M
+iwibmJmIjoxNjc1NzczMTc1LCJleHAiOjE2Nzc4NDY3NzV9.cH9dvtlcC77_OpA-_kEseueXwp0vztEoUDtKiWzB-Xw"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
+
+
+POST | /PLATE/LOGIN
+Authorization.
+
+
+Example Request
+
+<pre>
+<span class="key">/PLATE/LOGIN</span>
+</pre>
+
+
+
+Parameters
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"email"</span>: <span class="value">"test@gmail.com"</span>,
+<span class="key">"password"</span>: <span class="value">"qwertyui"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
+
+Response
+
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"access_token"</span>: <span class="value">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVza
+CI6ZmFsc2UsImlhdCI6MTY3NTc3MzE3NSwianRpIjoiMjQzMjBiMWUtMmFhNS00MGYxLTkwMWQtNjUyMDA3ZWM4NjAwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6M
+iwibmJmIjoxNjc1NzczMTc1LCJleHAiOjE2Nzc4NDY3NzV9.cH9dvtlcC77_OpA-_kEseueXwp0vztEoUDtKiWzB-Xw"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
+
 GET | /PLATE/GENERATE
 This endpoint allows you to generate a specified amount of state vehicle registration numbers.
 
-Parameters
-<li><code>token</code>: Bearer token for Authorization 65ded53be0a581a8554f340cc3640ee41f9a5525</li>
-<li><code>amount</code>: Number of registration numbers to generate in the response</li>
 
 Example Request
 
@@ -32,30 +110,46 @@ Example Request
 <span class="key">/PLATE/GENERATE?amount=5</span>
 </pre>
 
+
+
+Parameters
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"amount"</span>: <span class="value">"2"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
+</pre>
+
 Response
 
 <pre>
 <span class="key">{</span>
 <span class="key"> </span>
-<span class="key">"1"</span>: <span class="value">"В261СА31"</span>,
-<span class="key">"2"</span>: <span class="value">"О022КР93"</span>,
-<span class="key">"3"</span>: <span class="value">"О424ТО92"</span>,
-<span class="key">"4"</span>: <span class="value">"Р557УН161"</span>,
-<span class="key">"5"</span>: <span class="value">"К248КС150"</span>,
+<span class="key">"generate_car_numbers"</span>: <span class="value">"[{1: 'О166ВЕ90', 2: 'О507УР44'}]"</span>,
 <span class="key"> </span>
 <span class="key">}</span>
 </pre>
+
 GET | /PLATE/GET
 This endpoint allows you to retrieve a specific state vehicle registration number record by its ID.
 
-Parameters
-<li><code>token</code>: Bearer token for Authorization 65ded53be0a581a8554f340cc3640ee41f9a5525</li</li>
+
 <li><code>id</code>: ID of the registration number record in the format of uuid4</li>
 
 Example Request
 
 <pre>
-<span class="key">/PLATE/GET?id=adc3e6f7-3ba7-42e7-8616-f3b0ed3f9760</span>
+<span class="key">/PLATE/GET?id=0e9b309b-7821-4c43-9b07-9f5bb63107af</span>
+</pre>
+
+Parameters
+<pre>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"id"</span>: <span class="value">"0e9b309b-7821-4c43-9b07-9f5bb63107af"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
 </pre>
 
 Response
@@ -63,7 +157,7 @@ Response
 <pre>
 <span class="key">{</span>
 <span class="key"> </span>
-<span class="key">"adc3e6f7-3ba7-42e7-8616-f3b0ed3f9760"</span>: <span class="value">"А777ЕУ77"</span>,
+<span class="key">"auto_numbers"</span>: <span class="value">"А463ЕА799"</span>,
 <span class="key"> </span>
 <span class="key">}</span>
 </pre>
@@ -72,13 +166,14 @@ POST | /PLATE/ADD
 This endpoint allows you to add a new state vehicle registration number to the database.
 Before adding, the correctness of the registration number is checked.
 
-Parameters
-<li><code>token</code>: Bearer token for Authorization 65ded53be0a581a8554f340cc3640ee41f9a5525</li>
-<li><code>plate</code>: State vehicle registration number</li>
 
-Example Request
+Parameters
 <pre>
-<span class="key">/PLATE/ADD?plate=a888еу77</span>
+<span class="key">{</span>
+<span class="key"> </span>
+<span class="key">"auto_numbers"</span>: <span class="value">"А465eА799"</span>,
+<span class="key"> </span>
+<span class="key">}</span>
 </pre>
 
 Response
@@ -86,7 +181,8 @@ Response
 <pre>
 <span class="key">{</span>
 <span class="key"> </span>
-<span class="key">"42465c4b-05f7-46bf-810f-c931824fee5c"</span>: <span class="value">"А888ЕУ77"</span>,
+<span class="key">"auto_numbers"</span>: <span class="value">"А465ЕА799"</span>,
+<span class="key">"id"</span>: <span class="value">"37750d34-f01b-472b-8d67-34b9fe9e8581"</span>,
 <span class="key"> </span>
 <span class="key">}</span>
 </pre>
@@ -94,15 +190,9 @@ Response
 ## Usage
 
 The application has the following endpoints:
-
+<li><code>GET /swagger-ui</code>: swagger documentation</li>
 <li><code>GET /PLATE/GENERATE</code>: Generate new car numbers with a specified quantity</li>
 <li><code>GET /PLATE/GET</code>: Retrieve a list of generated car numbers</li>
 <li><code>POST /PLATE/ADD</code>: Add a new car numbers to the database</li>
-
-
-## Acknowledgments
-
-<li><a href="https://pypi.org/project/gosnomer/" target="_new">gosnomer</a> library</li>
-<li><a href="https://flask.palletsprojects.com/" target="_new">Flask</a></li>
-<li><a href="https://www.sqlalchemy.org/" target="_new">SQLAlchemy</a></li>
-
+<li><code>GET /PLATE/REGISTER</code>: Registration for receiving a Bearer Token</li>
+<li><code>POST /PLATE/LOGIN</code>: Authorization</li>
